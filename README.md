@@ -67,6 +67,35 @@ AICodeSeed/
   5. 评估与推理（model.eval(), torch.no_grad()）
 - **适合人群**：深度学习/PyTorch初学者、需要理解底层原理的开发者
 
+### 4. hf-model-tester/ —— HuggingFace模型测试与推理工具集
+- **功能**：提供HuggingFace Transformers模型的本地下载、离线推理、API在线推理等全流程测试脚本，适合模型验证、NLP开发和教学演示。
+- **主要内容**：
+  - **trsanformers_test/**
+    - `test01.py`：一键下载GPT2/BERT等常用中文模型到本地缓存，便于离线推理。
+    - `test02.py`：本地GPT2模型文本生成（自动续写），支持GPU/CPU自动切换。
+    - `test03.py`：本地BERT模型文本分类，支持GPU/CPU自动切换。
+  - **API_test/**
+    - `api_test01.py`：匿名调用HuggingFace推理API，快速体验云端模型。
+    - `api_test02.py`：使用Token鉴权调用API，适合私有/高配额场景。
+- **典型用法**：
+  1. 运行`test01.py`下载模型。
+  2. 运行`test02.py`或`test03.py`进行本地推理，无需外网。
+  3. 运行API_test下脚本体验云端推理。
+- **依赖环境**：
+  - Python 3.7+
+  - transformers >= 4.0
+  - torch >= 1.7
+  - requests
+- **适用场景**：
+  - 离线部署与推理：本地加载模型，适合无外网环境或大规模推理
+  - API云推理：无需本地部署，适合快速体验和小规模测试
+  - 中文NLP模型验证：支持GPT2、BERT等主流中文模型
+- **亮点**：
+  - 全流程中文注释，便于理解和二次开发
+  - 自动检测GPU/CPU，代码通用性强
+  - 兼容HuggingFace官方缓存机制，路径零配置
+  - 适合教学、科研、工程落地
+
 ---
 
 ## 快速开始
