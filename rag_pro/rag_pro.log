@@ -1,0 +1,14 @@
+2025-06-30 10:13:20,885 - root - INFO - RAG Pro系统启动
+2025-06-30 10:13:20,885 - root - INFO - API密钥检查通过
+2025-06-30 10:13:20,963 - root - INFO - 模型初始化成功
+2025-06-30 10:13:20,965 - faiss.loader - INFO - Loading faiss.
+2025-06-30 10:13:20,983 - faiss.loader - INFO - Successfully loaded faiss.
+2025-06-30 10:13:20,999 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-06-30 10:13:21,001 - root - INFO - 向量数据库加载成功，包含 10 个文档
+2025-06-30 10:13:21,001 - root - INFO - 多查询检索器创建成功
+2025-06-30 10:13:22,538 - langchain.retrievers.multi_query - INFO - Generated queries: ['客户经理的绩效评估标准有哪些？  ', '客户经理的工作考核主要从哪些方面进行？  ', '客户经理的业绩衡量指标是什么？']
+2025-06-30 10:13:23,227 - root - INFO - 查询 '客户经理的考核标准是什么？' 找到 5 个相关文档
+2025-06-30 10:13:24,949 - langchain.retrievers.multi_query - INFO - Generated queries: ['客户经理每年的评聘申报通常在什么时候进行？  ', '客户经理年度评聘申报的时间安排是怎样的？  ', '什么时候可以提交客户经理的年度评聘申请？']
+2025-06-30 10:13:25,914 - root - INFO - 查询 '客户经理每年评聘申报时间是怎样的？' 找到 5 个相关文档
+2025-06-30 10:13:27,554 - langchain.retrievers.multi_query - INFO - Generated queries: ['客户经理收到投诉后，每次投诉会扣除多少分数？  ', '如果客户经理遭到投诉，一次投诉会影响多少评分？  ', '客户经理因投诉被处罚的评分标准是什么？']
+2025-06-30 10:13:28,247 - root - INFO - 查询 '客户经理被投诉了，投诉一次扣多少分？' 找到 6 个相关文档

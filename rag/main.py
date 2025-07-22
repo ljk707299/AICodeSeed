@@ -143,14 +143,14 @@ class PDFProcessor:
             # 逐页处理PDF内容
             for page_number, page in enumerate(pdf_reader.pages, start=1):
                 try:
-                    extracted_text = page.extract_text()
-                    if extracted_text:
+        extracted_text = page.extract_text()
+        if extracted_text:
                         # 添加换行符确保文本格式正确
                         text += extracted_text + "\n"
                         # 为每行文本记录对应的页码
                         lines = extracted_text.split("\n")
                         page_numbers.extend([page_number] * len(lines))
-                    else:
+        else:
                         self.logger.warning(f"第 {page_number} 页未找到文本内容")
                 except Exception as e:
                     # 单页处理失败不影响整体处理
@@ -399,9 +399,9 @@ class VectorStoreManager:
             
             # 创建FAISS向量数据库
             knowledge_base = FAISS.from_texts(chunks, embeddings)
-            
-            # 存储每个文本块对应的页码信息
-            page_info = {chunk: page_numbers[i] for i, chunk in enumerate(chunks)}
+    
+    # 存储每个文本块对应的页码信息
+    page_info = {chunk: page_numbers[i] for i, chunk in enumerate(chunks)}
             knowledge_base.page_info = page_info
             
             self.logger.info("知识库创建成功")
@@ -425,7 +425,7 @@ class VectorStoreManager:
         """
         try:
             save_path = Path(save_path)
-            # 确保目录存在
+        # 确保目录存在
             save_path.mkdir(parents=True, exist_ok=True)
             
             # 保存FAISS向量数据库
