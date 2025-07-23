@@ -96,6 +96,57 @@ AICodeSeed/
   - 兼容HuggingFace官方缓存机制，路径零配置
   - 适合教学、科研、工程落地
 
+
+### 5. BertSenti - 基于BERT的中文情感分析
+
+- **功能**：
+  中文文本情感分类（正面/负面）
+- 支持对中文短文本/长文本的情感倾向分析
+- 输出二元分类结果（正面/负面）
+- 可调整分类阈值满足不同场景需求
+  BERT模型微调训练
+- 基于HuggingFace Transformers实现
+- 支持多种BERT变体（BERT-wwm、RoBERTa等）
+- 灵活调整训练超参数：
+  ```python
+  training_args = {
+      'batch_size': 32,
+      'learning_rate': 2e-5,
+      'epochs': 3
+  }
+- **主要内容**：
+```
+BertSenti/
+├── MyData.py             # 数据集加载和处理模块
+│   ├── TextPreprocessor  # 文本预处理类
+│   ├── DataAugmentor     # 数据增强类
+│   └── DatasetBuilder   # 数据集构建类
+│
+├── net.py                # 模型架构定义
+│   ├── BertSenti         # 主模型类
+│   └── ModelUtils        # 模型工具函数
+│
+├── train_val.py          # 训练验证主程序
+│   ├── Trainer           # 训练逻辑
+│   └── Evaluator        # 评估逻辑
+│
+├── configs/              # 配置文件目录
+│   └── default.yaml      # 默认训练配置
+│
+├── data/                 # 数据目录
+│   ├── raw/              # 原始数据
+│   └── processed/        # 处理后的数据
+│
+├── model/                # 预训练模型
+│   └── bert-base-chinese # 默认BERT模型
+│
+└── params/               # 训练参数
+    ├── best_model.bin    # 最佳模型参数
+    └── training_log.csv # 训练日志
+```
+
+
+
 ---
 
 ## 快速开始
